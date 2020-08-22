@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="/css/sp.css">
+</head>
+<body>
+    <h1> Danh sách sản phẩm</h1>
+    <div class="search_box">
+        <form action="/search" method="get">
+            <input type="text" name="keyword">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+
+    <h2 class="add_product"> <a href="them-san-pham"> Thêm sản phẩm</a> </h2>
+    <div class="list_product">
+        <% sps.map(e=>{%>
+        <div class="list">
+            <div class="name_product"> <%= e.TenSanPham%></div>
+
+            <div class="image_product"><img src = "<%= e.MieuTa %>"></div>
+            <div class="price_product"><span>Giá: <%= e.DonGia %></span></div>
+        </div>
+        <% })%>
+    </div>
+</body>
+</html>
